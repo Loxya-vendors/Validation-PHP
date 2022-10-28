@@ -1,10 +1,2 @@
-.couscous/
-.iso-codes-cache/
-.phpcs.cache
-.phpunit.result.cache
 composer.lock
-Makefile
-phpcs.xml
-phpstan.neon
-phpunit.xml
 vendor/

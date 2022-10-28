@@ -1,6 +1,0 @@
-/*.dist export-ignore
-/*.yml export-ignore
-/.* export-ignore
-/bin export-ignore
-/docs export-ignore
-/tests export-ignore
