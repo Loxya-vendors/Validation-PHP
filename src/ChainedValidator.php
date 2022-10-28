@@ -78,6 +78,8 @@ interface ChainedValidator extends Validatable
      */
     public function containsAny(array $needles, bool $strictCompareArray = false): ChainedValidator;
 
+    public function custom(callable $callback): ChainedValidator;
+
     public function countable(): ChainedValidator;
 
     public function countryCode(?string $set = null): ChainedValidator;

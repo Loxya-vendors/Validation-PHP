@@ -26,25 +26,11 @@ final class EachException extends NestedValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     *
-     * @todo This method shares too much with the parent implementation
-     */
-    public function getMessages(array $templates = []): array
+    public function getMessages(): array
     {
-        $messages = [];
-        $count = -1;
-        foreach ($this->getChildren() as $exception) {
-            $count++;
-            $id = $exception->getId();
-
-            $messages[$id . '.' . $count] = $this->renderMessage(
-                $exception,
-                $this->findTemplates($templates, $this->getId())
-            );
-        }
-
-        return $messages;
+        return array_map(
+            fn ($exception) => $exception->getMessage(),
+            $this->getChildren(),
+        );
     }
 }

@@ -82,6 +82,8 @@ interface StaticValidator
 
     public static function countryCode(?string $set = null): ChainedValidator;
 
+    public static function custom(callable $callback): ChainedValidator;
+
     public static function currencyCode(): ChainedValidator;
 
     public static function cpf(): ChainedValidator;

@@ -14,8 +14,6 @@ use function array_shift;
 use function count;
 use function current;
 use function implode;
-use function is_array;
-use function is_string;
 use function spl_object_hash;
 use function sprintf;
 use function str_repeat;
@@ -115,42 +113,15 @@ class NestedValidationException extends ValidationException implements IteratorA
         return $childrenExceptions;
     }
 
-    /**
-     * Returns a key->value array with all the messages of the exception.
-     *
-     * In this array the "keys" are the ids of the exceptions (defined name or
-     * name of the rule) and the values are the message.
-     *
-     * Once templates are passed it overwrites the templates of the given
-     * messages.
-     *
-     * @param string[]|string[][] $templates
-     *
-     * @return string[]
-     */
-    public function getMessages(array $templates = []): array
+    public function getMessages()
     {
-        $messages = [$this->getId() => $this->renderMessage($this, $templates)];
-        foreach ($this->getChildren() as $exception) {
-            $id = $exception->getId();
-            if (!$exception instanceof self) {
-                $messages[$id] = $this->renderMessage(
-                    $exception,
-                    $this->findTemplates($templates, $this->getId())
-                );
-                continue;
-            }
-
-            $messages[$id] = $exception->getMessages($this->findTemplates($templates, $id, $this->getId()));
-            if (count($messages[$id]) > 1) {
-                continue;
-            }
-
-            $messages[$id] = current($messages[$exception->getId()]);
+        $messages = [$this->getMessage()];
+        foreach ($this as $exception) {
+            $messages[] = $exception->getMessage();
         }
 
         if (count($messages) > 1) {
-            unset($messages[$this->getId()]);
+            array_shift($messages);
         }
 
         return $messages;
@@ -180,42 +151,6 @@ class NestedValidationException extends ValidationException implements IteratorA
         }
 
         return implode(PHP_EOL, $messages);
-    }
-
-    /**
-     * @param string[]|string[][] $templates
-     */
-    protected function renderMessage(ValidationException $exception, array $templates): string
-    {
-        if (isset($templates[$exception->getId()]) && is_string($templates[$exception->getId()])) {
-            $exception->updateTemplate($templates[$exception->getId()]);
-        }
-
-        return $exception->getMessage();
-    }
-
-    /**
-     * @param string[]|string[][] $templates
-     * @param mixed ...$ids
-     *
-     * @return string[]|string[][]
-     */
-    protected function findTemplates(array $templates, ...$ids): array
-    {
-        while (count($ids) > 0) {
-            $id = array_shift($ids);
-            if (!isset($templates[$id])) {
-                continue;
-            }
-
-            if (!is_array($templates[$id])) {
-                continue;
-            }
-
-            $templates = $templates[$id];
-        }
-
-        return $templates;
     }
 
     /**
@@ -250,5 +185,14 @@ class NestedValidationException extends ValidationException implements IteratorA
         }
 
         return !$childException instanceof NonOmissibleException;
+    }
+
+    public function setName(string $name): void
+    {
+        parent::setName($name);
+
+        foreach ($this->getChildren() as $exception) {
+            $exception->setName($name);
+        }
     }
 }

@@ -45,11 +45,6 @@ class ValidationException extends InvalidArgumentException implements Exception
     /**
      * @var string
      */
-    private $id;
-
-    /**
-     * @var string
-     */
     private $mode = self::MODE_DEFAULT;
 
     /**
@@ -71,20 +66,14 @@ class ValidationException extends InvalidArgumentException implements Exception
      * @param mixed $input
      * @param mixed[] $params
      */
-    public function __construct($input, string $id, array $params, Formatter $formatter)
+    public function __construct($input, array $params, Formatter $formatter)
     {
         $this->input = $input;
-        $this->id = $id;
         $this->params = $params;
         $this->formatter = $formatter;
         $this->template = $this->chooseTemplate();
 
         parent::__construct($this->createMessage());
-    }
-
-    public function getId(): string
-    {
-        return $this->id;
     }
 
     /**
@@ -117,6 +106,12 @@ class ValidationException extends InvalidArgumentException implements Exception
     public function updateTemplate(string $template): void
     {
         $this->template = $template;
+        $this->message = $this->createMessage();
+    }
+
+    public function setName(string $name): void
+    {
+        $this->params['name'] = $name;
         $this->message = $this->createMessage();
     }
 

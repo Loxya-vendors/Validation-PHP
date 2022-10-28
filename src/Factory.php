@@ -17,7 +17,6 @@ use Respect\Validation\Message\Formatter;
 use Respect\Validation\Message\ParameterStringifier;
 use Respect\Validation\Message\Stringifier\KeepOriginalStringName;
 use function array_merge;
-use function lcfirst;
 use function sprintf;
 use function str_replace;
 use function trim;
@@ -148,10 +147,6 @@ final class Factory
         $reflection = new ReflectionObject($validatable);
         $ruleName = $reflection->getShortName();
         $params = ['input' => $input] + $extraParams + $this->extractPropertiesValues($validatable, $reflection);
-        $id = lcfirst($ruleName);
-        if ($validatable->getName() !== null) {
-            $id = $params['name'] = $validatable->getName();
-        }
         $exceptionNamespace = str_replace('\\Rules', '\\Exceptions', $reflection->getNamespaceName());
         foreach (array_merge([$exceptionNamespace], $this->exceptionsNamespaces) as $namespace) {
             try {
@@ -160,7 +155,6 @@ final class Factory
 
                 return $this->createValidationException(
                     $exceptionName,
-                    $id,
                     $input,
                     $params,
                     $formatter
@@ -170,7 +164,7 @@ final class Factory
             }
         }
 
-        return new ValidationException($input, $id, $params, $formatter);
+        return new ValidationException($input, $params, $formatter);
     }
 
     /**
@@ -219,7 +213,6 @@ final class Factory
      */
     private function createValidationException(
         string $exceptionName,
-        string $id,
         $input,
         array $params,
         Formatter $formatter
@@ -227,7 +220,7 @@ final class Factory
         /** @var ValidationException $exception */
         $exception = $this
             ->createReflectionClass($exceptionName, ValidationException::class)
-            ->newInstance($input, $id, $params, $formatter);
+            ->newInstance($input, $params, $formatter);
         if (isset($params['template'])) {
             $exception->updateTemplate($params['template']);
         }
