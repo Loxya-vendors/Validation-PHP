@@ -36,17 +36,14 @@ final class Phone extends AbstractRule
     {
         $this->countryCode = $countryCode;
 
-        if (!is_null($countryCode) && !(new CountryCode())->validate($countryCode)) {
-            throw new ComponentException(
-                sprintf(
-                    'Invalid country code %s',
-                    $countryCode
-                )
-            );
-        }
+        if (!is_null($countryCode)) {
+            if (!(new CountryCode())->validate($countryCode)) {
+                throw new ComponentException(sprintf('Invalid country code %s', $countryCode));
+            }
 
-        if (!class_exists(PhoneNumberUtil::class)) {
-            throw new ComponentException('The phone validator requires giggsey/libphonenumber-for-php');
+            if (!class_exists(PhoneNumberUtil::class)) {
+                throw new ComponentException('The phone validator requires giggsey/libphonenumber-for-php');
+            }
         }
     }
 
@@ -57,6 +54,14 @@ final class Phone extends AbstractRule
     {
         if (!is_scalar($input)) {
             return false;
+        }
+
+        if (is_null($this->countryCode)) {
+            $pattern = vsprintf(
+                '/^\+?(%1$s)? ?(?(?=\()(\(%2$s\) ?%3$s)|([. -]?(%2$s[. -]*)?%3$s))$/',
+                ['\d{0,3}', '\d{1,3}', '((\d{3,5})[. -]?(\d{4})|(\d{2}[. -]?){4})']
+            );
+            return preg_match($pattern, (string) $input) > 0;
         }
 
         try {
