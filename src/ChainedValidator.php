@@ -203,6 +203,8 @@ interface ChainedValidator extends Validatable
 
     public function keySet(Key ...$rule): ChainedValidator;
 
+    public function keySetStrict(Key ...$rule): ChainedValidator;
+
     public function keyValue(string $comparedKey, string $ruleName, string $baseKey): ChainedValidator;
 
     public function languageCode(?string $set = null): ChainedValidator;

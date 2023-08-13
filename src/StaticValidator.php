@@ -203,6 +203,8 @@ interface StaticValidator
 
     public static function keySet(Key ...$rule): ChainedValidator;
 
+    public static function keySetStrict(Key ...$rule): ChainedValidator;
+
     public static function keyValue(string $comparedKey, string $ruleName, string $baseKey): ChainedValidator;
 
     public static function languageCode(?string $set = null): ChainedValidator;

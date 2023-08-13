@@ -17,13 +17,18 @@ use function current;
 use function is_array;
 
 /**
- * Validates a keys in a defined structure with extra keys allowed.
+ * Validates a keys in a defined structure.
  *
  * @author Emmerson Siqueira <emmersonsiqueira@gmail.com>
  * @author Henrique Moody <henriquemoody@gmail.com>
  */
-final class KeySet extends AbstractWrapper implements NonNegatable
+final class KeySetStrict extends AbstractWrapper implements NonNegatable
 {
+    /**
+     * @var mixed[]
+     */
+    private $extraKeys = [];
+
     /**
      * @var Key[]
      */
@@ -88,7 +93,7 @@ final class KeySet extends AbstractWrapper implements NonNegatable
         }
 
         if (!$validatable instanceof AllOf || count($validatable->getRules()) !== 1) {
-            throw new ComponentException('KeySet rule accepts only Key rules');
+            throw new ComponentException('KeySetStrict rule accepts only Key rules');
         }
 
         return $this->getKeyRule(current($validatable->getRules()));
@@ -107,8 +112,14 @@ final class KeySet extends AbstractWrapper implements NonNegatable
             if (!array_key_exists($keyRule->getReference(), $input) && $keyRule->isMandatory()) {
                 return false;
             }
+
+            unset($input[$keyRule->getReference()]);
         }
 
-        return true;
+        foreach ($input as $extraKey => &$ignoreValue) {
+            $this->extraKeys[] = $extraKey;
+        }
+
+        return count($input) == 0;
     }
 }
