@@ -5,7 +5,7 @@ namespace Respect\Validation\Rules;
 
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Exceptions\ValidationException;
-use Respect\Validation\Validator;
+use Respect\Validation\Validatable;
 
 final class Custom extends AbstractRule
 {
@@ -67,7 +67,7 @@ final class Custom extends AbstractRule
             $result = $e;
         }
 
-        if ($result instanceof Validator) {
+        if ($result instanceof Validatable) {
             try {
                 if ($this->name !== null) {
                     $result->setName($this->name);
