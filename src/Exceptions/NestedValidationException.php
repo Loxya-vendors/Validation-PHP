@@ -192,6 +192,9 @@ class NestedValidationException extends ValidationException implements IteratorA
         parent::setName($name);
 
         foreach ($this->getChildren() as $exception) {
+            if ($exception instanceof KeyException) {
+                continue;
+            }
             $exception->setName($name);
         }
     }
