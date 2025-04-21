@@ -171,7 +171,7 @@ interface ChainedValidator extends Validatable
     /**
      * @param mixed[]|mixed $haystack
      */
-    public function in($haystack, bool $compareIdentical = false): ChainedValidator;
+    public function in($haystack, bool $compareIdentical = true): ChainedValidator;
 
     public function infinite(): ChainedValidator;
 

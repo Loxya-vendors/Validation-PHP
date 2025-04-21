@@ -36,7 +36,7 @@ final class In extends AbstractRule
      *
      * @param mixed[]|mixed $haystack
      */
-    public function __construct($haystack, bool $compareIdentical = false)
+    public function __construct($haystack, bool $compareIdentical = true)
     {
         $this->haystack = $haystack;
         $this->compareIdentical = $compareIdentical;

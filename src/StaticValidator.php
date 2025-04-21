@@ -171,7 +171,7 @@ interface StaticValidator
     /**
      * @param mixed[]|mixed $haystack
      */
-    public static function in($haystack, bool $compareIdentical = false): ChainedValidator;
+    public static function in($haystack, bool $compareIdentical = true): ChainedValidator;
 
     public static function infinite(): ChainedValidator;
 
