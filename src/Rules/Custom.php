@@ -42,12 +42,14 @@ final class Custom extends AbstractRule
             throw $result;
         }
 
+        $extraParams = [];
         if (is_string($result) || is_array($result)) {
             $result = (array) $result;
-            $this->setTemplate($result[0], array_slice($result, 1));
+            $extraParams = array_slice($result, 1);
+            $this->setTemplate($result[0]);
         }
 
-        throw $this->reportError($input);
+        throw $this->reportError($input, $extraParams);
     }
 
     // ------------------------------------------------------

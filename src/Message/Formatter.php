@@ -44,7 +44,10 @@ final class Formatter
                     return $match[0];
                 }
 
-                return $this->parameterStringifier->stringify($match[1], $parameters[$match[1]]);
+                $value = $parameters[$match[1]];
+                return !is_string($value) && !is_integer($value)
+                    ? $this->parameterStringifier->stringify($match[1], $value)
+                    : (string) $value;
             },
             call_user_func($this->translator, $template)
         );
