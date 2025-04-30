@@ -77,7 +77,12 @@ final class Factory
     public function withRuleNamespace(string $rulesNamespace): self
     {
         $clone = clone $this;
-        $clone->rulesNamespaces[] = trim($rulesNamespace, '\\');
+        array_splice(
+            $clone->rulesNamespaces,
+            count($clone->rulesNamespaces) - 1,
+            0,
+            [trim($rulesNamespace, '\\')],
+        );
 
         return $clone;
     }
@@ -85,7 +90,12 @@ final class Factory
     public function withExceptionNamespace(string $exceptionsNamespace): self
     {
         $clone = clone $this;
-        $clone->exceptionsNamespaces[] = trim($exceptionsNamespace, '\\');
+        array_splice(
+            $clone->exceptionsNamespaces,
+            count($clone->exceptionsNamespaces) - 1,
+            0,
+            [trim($exceptionsNamespace, '\\')],
+        );
 
         return $clone;
     }
