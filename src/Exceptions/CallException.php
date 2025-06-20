@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class CallException extends NestedValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{input}} must be valid when executed with {{callable}}',

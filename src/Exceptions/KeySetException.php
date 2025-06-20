@@ -16,9 +16,6 @@ final class KeySetException extends GroupedValidationException implements NonOmi
 {
     public const STRUCTURE = 'structure';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NONE => 'All of the required rules must pass for {{name}}',
@@ -27,9 +24,6 @@ final class KeySetException extends GroupedValidationException implements NonOmi
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if (count($this->getChildren()) === 0) {

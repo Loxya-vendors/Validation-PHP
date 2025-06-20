@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class AlnumException extends FilteredValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must contain only letters (a-z) and digits (0-9)',

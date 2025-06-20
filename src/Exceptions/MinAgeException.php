@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class MinAgeException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be {{age}} years or more',

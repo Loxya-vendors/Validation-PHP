@@ -19,9 +19,6 @@ use function ctype_punct;
  */
 final class Punct extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_punct($input);

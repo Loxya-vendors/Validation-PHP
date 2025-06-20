@@ -44,6 +44,6 @@ final class Pesel extends AbstractRule
 
         $calculateControlNumber = (10 - $calculateControlNumber % 10) % 10;
 
-        return $targetControlNumber == $calculateControlNumber;
+        return $targetControlNumber === $calculateControlNumber;
     }
 }

@@ -19,9 +19,6 @@ final class KeyNestedException extends NestedValidationException implements NonO
     public const NOT_PRESENT = 'not_present';
     public const INVALID = 'invalid';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NOT_PRESENT => 'No items were found for key chain {{name}}',
@@ -33,9 +30,6 @@ final class KeyNestedException extends NestedValidationException implements NonO
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         return $this->getParam('hasReference') ? self::INVALID : self::NOT_PRESENT;

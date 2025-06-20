@@ -20,14 +20,10 @@ use Respect\Validation\Validatable;
  */
 abstract class AbstractEnvelope extends AbstractRule
 {
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $validatable;
 
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $parameters;
 
     /**

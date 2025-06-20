@@ -16,9 +16,6 @@ final class UuidException extends ValidationException
 {
     public const VERSION = 'version';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid UUID',
@@ -30,9 +27,6 @@ final class UuidException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if ($this->getParam('version')) {

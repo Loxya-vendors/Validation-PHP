@@ -24,9 +24,7 @@ use function sprintf;
  */
 final class Not extends AbstractRule
 {
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $rule;
 
     public function __construct(Validatable $rule)
@@ -102,8 +100,8 @@ final class Not extends AbstractRule
             throw new ComponentException(
                 sprintf(
                     '"%s" can not be wrapped in Not()',
-                    get_class($rule)
-                )
+                    get_class($rule),
+                ),
             );
         }
 

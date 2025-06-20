@@ -31,7 +31,7 @@ interface StaticValidator
     public static function attribute(
         string $reference,
         ?Validatable $validator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public static function base(int $base, ?string $chars = null): ChainedValidator;
@@ -192,13 +192,13 @@ interface StaticValidator
     public static function key(
         string $reference,
         ?Validatable $referenceValidator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public static function keyNested(
         string $reference,
         ?Validatable $referenceValidator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public static function keySet(Key ...$rule): ChainedValidator;

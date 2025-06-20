@@ -20,9 +20,7 @@ use function var_export;
  */
 final class Decimal extends AbstractRule
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     private $decimals;
 
     public function __construct(int $decimals)

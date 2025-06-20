@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class Base64Exception extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be Base64-encoded',

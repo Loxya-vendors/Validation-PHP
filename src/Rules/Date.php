@@ -25,14 +25,10 @@ final class Date extends AbstractRule
 {
     use CanValidateDateTime;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $format;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $sample;
 
     /**

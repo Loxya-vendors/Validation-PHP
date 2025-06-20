@@ -16,9 +16,6 @@ final class VideoUrlException extends ValidationException
 {
     public const SERVICE = 'service';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid video URL',
@@ -30,9 +27,6 @@ final class VideoUrlException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if ($this->getParam('service')) {

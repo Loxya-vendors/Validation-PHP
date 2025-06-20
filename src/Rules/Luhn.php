@@ -42,15 +42,15 @@ final class Luhn extends AbstractRule
         $parity = $numDigits % 2;
         for ($i = 0; $i < $numDigits; ++$i) {
             $digit = $digits[$i];
-            if ($parity == $i % 2) {
+            if ($parity === $i % 2) {
                 $digit <<= 1;
                 if (9 < $digit) {
-                    $digit = $digit - 9;
+                    $digit -= 9;
                 }
             }
             $sum += $digit;
         }
 
-        return $sum % 10 == 0;
+        return $sum % 10 === 0;
     }
 }

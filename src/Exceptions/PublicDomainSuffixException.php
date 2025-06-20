@@ -12,9 +12,6 @@ namespace Respect\Validation\Exceptions;
  */
 class PublicDomainSuffixException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a public domain suffix',

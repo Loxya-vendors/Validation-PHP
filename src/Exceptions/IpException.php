@@ -17,9 +17,6 @@ final class IpException extends ValidationException
 {
     public const NETWORK_RANGE = 'network_range';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be an IP address',
@@ -31,9 +28,6 @@ final class IpException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if (!$this->getParam('range')) {

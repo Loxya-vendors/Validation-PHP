@@ -22,9 +22,7 @@ use function array_map;
  */
 abstract class AbstractComposite extends AbstractRule
 {
-    /**
-     * @var Validatable[]
-     */
+    /** @var Validatable[] */
     private $rules = [];
 
     /**
@@ -35,9 +33,6 @@ abstract class AbstractComposite extends AbstractRule
         $this->rules = $rules;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setName(string $name): Validatable
     {
         $parentName = $this->getName();
@@ -101,8 +96,8 @@ abstract class AbstractComposite extends AbstractRule
 
                     return null;
                 },
-                $this->getRules()
-            )
+                $this->getRules(),
+            ),
         );
     }
 

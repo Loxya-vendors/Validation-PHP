@@ -57,10 +57,10 @@ final class FilterVar extends AbstractEnvelope
             $arguments[] = $options;
         }
 
-        parent::__construct(new Callback(static function ($input) use ($filter, $arguments) {
-            return (self::ALLOWED_FILTERS[$filter])(
-                filter_var($input, ...$arguments)
-            );
-        }));
+        parent::__construct(new Callback(static fn ($input) => (
+            (self::ALLOWED_FILTERS[$filter])(
+                filter_var($input, ...$arguments),
+            )
+        )));
     }
 }

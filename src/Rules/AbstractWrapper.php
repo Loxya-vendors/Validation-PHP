@@ -17,9 +17,7 @@ use Respect\Validation\Validatable;
  */
 abstract class AbstractWrapper extends AbstractRule
 {
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $validatable;
 
     /**
@@ -54,9 +52,6 @@ abstract class AbstractWrapper extends AbstractRule
         return $this->validatable->validate($input);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setName(string $name): Validatable
     {
         $this->validatable->setName($name);

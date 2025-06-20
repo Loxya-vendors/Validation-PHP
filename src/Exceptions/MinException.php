@@ -15,9 +15,6 @@ final class MinException extends ValidationException
 {
     public const INCLUSIVE = 'inclusive';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be greater than or equal to {{compareTo}}',

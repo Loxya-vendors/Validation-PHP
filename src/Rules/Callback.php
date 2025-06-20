@@ -20,14 +20,10 @@ use function count;
  */
 final class Callback extends AbstractRule
 {
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $callback;
 
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $arguments;
 
     /**

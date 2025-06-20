@@ -32,9 +32,7 @@ final class VideoUrl extends AbstractRule
         // phpcs:enable Generic.Files.LineLength.TooLong
     ];
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $service;
 
     /**

@@ -17,9 +17,7 @@ use function mb_strtoupper;
  */
 final class Equivalent extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $compareTo;
 
     /**
@@ -41,7 +39,7 @@ final class Equivalent extends AbstractRule
             return $this->isStringEquivalent((string) $input);
         }
 
-        return $input == $this->compareTo;
+        return $input === $this->compareTo;
     }
 
     private function isStringEquivalent(string $input): bool

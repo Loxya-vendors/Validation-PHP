@@ -16,9 +16,6 @@ final class AlwaysInvalidException extends ValidationException
 {
     public const SIMPLE = 'simple';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} is always invalid',

@@ -37,29 +37,19 @@ class ValidationException extends InvalidArgumentException implements Exception
         ],
     ];
 
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $input;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $mode = self::MODE_DEFAULT;
 
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $params = [];
 
-    /**
-     * @var Formatter
-     */
+    /** @var Formatter */
     private $formatter;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $template;
 
     /**
@@ -139,7 +129,7 @@ class ValidationException extends InvalidArgumentException implements Exception
         return $this->formatter->format(
             $this->defaultTemplates[$this->mode][$this->template] ?? $this->template,
             $this->input,
-            $this->params
+            $this->params,
         );
     }
 

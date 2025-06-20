@@ -56,6 +56,6 @@ final class PolishIdCard extends AbstractRule
             $weightedSum += ($code - $difference) * $weights[$i];
         }
 
-        return $weightedSum % 10 == $input[3];
+        return $weightedSum % 10 === $input[3];
     }
 }

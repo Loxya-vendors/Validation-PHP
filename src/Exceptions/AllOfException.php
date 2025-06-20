@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 class AllOfException extends GroupedValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NONE => 'All of the required rules must pass for {{name}}',

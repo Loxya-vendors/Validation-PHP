@@ -20,19 +20,13 @@ use function is_scalar;
  */
 abstract class AbstractRelated extends AbstractRule
 {
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $mandatory = true;
 
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $reference;
 
-    /**
-     * @var Validatable|null
-     */
+    /** @var Validatable|null */
     private $rule;
 
     /**
@@ -76,9 +70,6 @@ abstract class AbstractRelated extends AbstractRule
         return $this->mandatory;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setName(string $name): Validatable
     {
         parent::setName($name);

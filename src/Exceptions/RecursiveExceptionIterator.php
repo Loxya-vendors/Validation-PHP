@@ -19,9 +19,7 @@ use UnexpectedValueException;
  */
 final class RecursiveExceptionIterator implements RecursiveIterator, Countable
 {
-    /**
-     * @var ArrayIterator<int, ValidationException>
-     */
+    /** @var ArrayIterator<int, ValidationException> */
     private $exceptions;
 
     public function __construct(NestedValidationException $parent)

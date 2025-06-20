@@ -19,9 +19,6 @@ final class KeyException extends NestedValidationException implements NonOmissib
     public const NOT_PRESENT = 'not_present';
     public const INVALID = 'invalid';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NOT_PRESENT => '{{name}} must be present',
@@ -33,9 +30,6 @@ final class KeyException extends NestedValidationException implements NonOmissib
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         return $this->getParam('hasReference') ? self::INVALID : self::NOT_PRESENT;

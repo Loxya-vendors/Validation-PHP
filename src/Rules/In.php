@@ -21,14 +21,10 @@ use function mb_strpos;
  */
 final class In extends AbstractRule
 {
-    /**
-     * @var mixed[]|mixed
-     */
+    /** @var mixed[]|mixed */
     private $haystack;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $compareIdentical;
 
     /**
@@ -64,7 +60,7 @@ final class In extends AbstractRule
         }
 
         if ($input === null || $input === '') {
-            return $input == $this->haystack;
+            return $input === $this->haystack;
         }
 
         return mb_stripos($this->haystack, (string) $input) !== false;

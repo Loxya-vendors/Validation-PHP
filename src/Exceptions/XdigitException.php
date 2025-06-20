@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class XdigitException extends FilteredValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} contain only hexadecimal digits',

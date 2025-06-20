@@ -19,9 +19,6 @@ use function ctype_space;
  */
 final class Space extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_space($input);

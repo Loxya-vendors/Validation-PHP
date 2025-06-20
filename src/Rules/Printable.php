@@ -20,9 +20,6 @@ use function ctype_print;
  */
 final class Printable extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_print($input);

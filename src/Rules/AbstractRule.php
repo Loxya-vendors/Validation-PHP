@@ -19,14 +19,10 @@ use Respect\Validation\Validatable;
  */
 abstract class AbstractRule implements Validatable
 {
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     protected $name;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     protected $template;
 
     /**
@@ -49,9 +45,6 @@ abstract class AbstractRule implements Validatable
         $this->assert($input);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): ?string
     {
         return $this->name;
@@ -65,9 +58,6 @@ abstract class AbstractRule implements Validatable
         return Factory::getDefaultInstance()->exception($this, $input, $extraParams);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setName(string $name): Validatable
     {
         $this->name = $name;
@@ -75,9 +65,6 @@ abstract class AbstractRule implements Validatable
         return $this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setTemplate(string $template): Validatable
     {
         $this->template = $template;

@@ -15,9 +15,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class FloatTypeException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be of type float',

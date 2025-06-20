@@ -20,9 +20,7 @@ use const YESEXPR;
  */
 final class Yes extends AbstractRule
 {
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $useLocale;
 
     /**

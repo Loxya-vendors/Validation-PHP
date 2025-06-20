@@ -18,9 +18,6 @@ final class SizeException extends NestedValidationException
     public const LOWER = 'lower';
     public const GREATER = 'greater';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::BOTH => '{{name}} must be between {{minSize}} and {{maxSize}}',
@@ -34,9 +31,6 @@ final class SizeException extends NestedValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if (!$this->getParam('minValue')) {

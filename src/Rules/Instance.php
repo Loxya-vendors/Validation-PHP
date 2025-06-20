@@ -16,9 +16,7 @@ namespace Respect\Validation\Rules;
  */
 final class Instance extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $instanceName;
 
     /**

@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class NipException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid Polish VAT identification number',

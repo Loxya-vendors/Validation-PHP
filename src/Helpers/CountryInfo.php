@@ -13,14 +13,10 @@ use function sprintf;
 
 final class CountryInfo
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $data;
 
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private static $runtimeCache = [];
 
     public function __construct(string $countryCode)

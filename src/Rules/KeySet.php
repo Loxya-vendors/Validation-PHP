@@ -24,9 +24,7 @@ use function is_array;
  */
 final class KeySet extends AbstractWrapper implements NonNegatable
 {
-    /**
-     * @var Key[]
-     */
+    /** @var Key[] */
     private $keyRules;
 
     /**

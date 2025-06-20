@@ -26,16 +26,14 @@ final class Sorted extends AbstractRule
     public const ASCENDING = 'ASC';
     public const DESCENDING = 'DESC';
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $direction;
 
     public function __construct(string $direction)
     {
         if ($direction !== self::ASCENDING && $direction !== self::DESCENDING) {
             throw new ComponentException(
-                sprintf('Direction should be either "%s" or "%s"', self::ASCENDING, self::DESCENDING)
+                sprintf('Direction should be either "%s" or "%s"', self::ASCENDING, self::DESCENDING),
             );
         }
 

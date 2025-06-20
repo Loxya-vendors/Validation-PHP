@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class DomainException extends NestedValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid domain',

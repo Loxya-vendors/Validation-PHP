@@ -138,10 +138,8 @@ final class Iban extends AbstractRule
     {
         return (string) preg_replace_callback(
             '/[A-Z]/',
-            static function (array $match): string {
-                return strval(ord($match[0]) - 55);
-            },
-            $reArrangedIban
+            static fn (array $match): string => strval(ord($match[0]) - 55),
+            $reArrangedIban,
         );
     }
 }

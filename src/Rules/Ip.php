@@ -34,29 +34,19 @@ use const FILTER_VALIDATE_IP;
  */
 final class Ip extends AbstractRule
 {
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $range;
 
-    /**
-     * @var int|null
-     */
+    /** @var int|null */
     private $options;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $startAddress;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $endAddress;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $mask;
 
     /**
@@ -110,7 +100,7 @@ final class Ip extends AbstractRule
 
     private function parseRange(string $input): void
     {
-        if ($input == '*' || $input == '*.*.*.*' || $input == '0.0.0.0-255.255.255.255') {
+        if ($input === '*' || $input === '*.*.*.*' || $input === '0.0.0.0-255.255.255.255') {
             return;
         }
 

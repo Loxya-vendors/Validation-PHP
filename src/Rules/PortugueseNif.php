@@ -41,7 +41,7 @@ final class PortugueseNif extends AbstractRule
             return false;
         }
 
-        if (strlen($input) != 9) {
+        if (strlen($input) !== 9) {
             return false;
         }
 
@@ -94,10 +94,10 @@ final class PortugueseNif extends AbstractRule
         $sum = array_sum($sumTerms);
         $modulus = $sum % 11;
 
-        if ($modulus == 0 || $modulus == 1) {
-            return $checkDigit == 0;
+        if ($modulus === 0 || $modulus === 1) {
+            return $checkDigit === 0;
         }
 
-        return $checkDigit == 11 - $modulus;
+        return $checkDigit === 11 - $modulus;
     }
 }

@@ -61,8 +61,8 @@ final class Type extends AbstractRule
                 sprintf(
                     '"%s" is not a valid type (Available: %s)',
                     $type,
-                    implode(', ', array_keys(self::AVAILABLE_TYPES))
-                )
+                    implode(', ', array_keys(self::AVAILABLE_TYPES)),
+                ),
             );
         }
 

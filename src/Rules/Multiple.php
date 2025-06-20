@@ -14,9 +14,7 @@ namespace Respect\Validation\Rules;
  */
 final class Multiple extends AbstractRule
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     private $multipleOf;
 
     public function __construct(int $multipleOf)
@@ -29,10 +27,10 @@ final class Multiple extends AbstractRule
      */
     public function validate($input): bool
     {
-        if ($this->multipleOf == 0) {
-            return $input == 0;
+        if ($this->multipleOf === 0) {
+            return $input === 0;
         }
 
-        return $input % $this->multipleOf == 0;
+        return $input % $this->multipleOf === 0;
     }
 }

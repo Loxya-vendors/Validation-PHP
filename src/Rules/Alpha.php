@@ -18,9 +18,6 @@ use function ctype_alpha;
  */
 final class Alpha extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_alpha($input);

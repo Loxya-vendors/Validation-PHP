@@ -22,9 +22,6 @@ final class LengthException extends ValidationException
     public const GREATER_INCLUSIVE = 'greater_inclusive';
     public const EXACT = 'exact';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::BOTH => '{{name}} must have a length between {{minValue}} and {{maxValue}}',
@@ -44,9 +41,6 @@ final class LengthException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         $isInclusive = $this->getParam('inclusive');
@@ -59,7 +53,7 @@ final class LengthException extends ValidationException
             return $isInclusive === true ? self::LOWER_INCLUSIVE : self::LOWER;
         }
 
-        if ($this->getParam('minValue') == $this->getParam('maxValue')) {
+        if ($this->getParam('minValue') === $this->getParam('maxValue')) {
             return self::EXACT;
         }
 

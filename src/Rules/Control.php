@@ -19,9 +19,6 @@ use function ctype_cntrl;
  */
 final class Control extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_cntrl($input);

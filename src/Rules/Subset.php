@@ -18,9 +18,7 @@ use function is_array;
  */
 final class Subset extends AbstractRule
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $superset;
 
     /**

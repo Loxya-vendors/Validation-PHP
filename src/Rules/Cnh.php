@@ -34,7 +34,7 @@ final class Cnh extends AbstractRule
         $input = (string) preg_replace('{\D}', '', (string) $input);
 
         // Validate length and invalid numbers
-        if (mb_strlen($input) != 11 || ((int) $input === 0)) {
+        if (mb_strlen($input) !== 11 || ((int) $input === 0)) {
             return false;
         }
 
@@ -45,13 +45,13 @@ final class Cnh extends AbstractRule
         }
 
         $dv1 = $s1 % 11;
-        if ($input[9] != ($dv1 > 9) ? 0 : $dv1) {
+        if ($input[9] !== ($dv1 > 9) ? 0 : $dv1) {
             return false;
         }
 
         $dv2 = $s2 % 11 - ($dv1 > 9 ? 2 : 0);
         $check = $dv2 < 0 ? $dv2 + 11 : ($dv2 > 9 ? 0 : $dv2);
 
-        return $input[10] == $check;
+        return $input[10] === $check;
     }
 }

@@ -19,9 +19,7 @@ use function preg_match;
  */
 final class Regex extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $regex;
 
     /**

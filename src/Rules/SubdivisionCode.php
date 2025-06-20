@@ -21,14 +21,10 @@ use function array_keys;
  */
 final class SubdivisionCode extends AbstractSearcher
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $countryName;
 
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $countryInfo;
 
     public function __construct(string $countryCode)

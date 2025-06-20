@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class LanguageCodeException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid ISO 639 {{set}} language code',

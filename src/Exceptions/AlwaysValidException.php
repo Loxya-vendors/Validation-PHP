@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class AlwaysValidException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} is always valid',

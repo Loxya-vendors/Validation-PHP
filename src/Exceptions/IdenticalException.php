@@ -12,9 +12,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class IdenticalException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be identical as {{compareTo}}',

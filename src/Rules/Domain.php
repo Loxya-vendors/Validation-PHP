@@ -29,19 +29,13 @@ use function mb_substr_count;
  */
 final class Domain extends AbstractRule
 {
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $genericRule;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $tldRule;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $partsRule;
 
     public function __construct(bool $tldCheck = true)
@@ -80,7 +74,7 @@ final class Domain extends AbstractRule
     {
         try {
             $this->assert($input);
-        } catch (ValidationException $exception) {
+        } catch (ValidationException) {
             return false;
         }
 
@@ -115,7 +109,7 @@ final class Domain extends AbstractRule
         } catch (NestedValidationException $nestedValidationException) {
             $exceptions = array_merge(
                 $exceptions,
-                iterator_to_array($nestedValidationException)
+                iterator_to_array($nestedValidationException),
             );
         } catch (ValidationException $validationException) {
             $exceptions[] = $validationException;
@@ -128,7 +122,7 @@ final class Domain extends AbstractRule
             new StringType(),
             new NoWhitespace(),
             new Contains('.'),
-            new Length(3)
+            new Length(3),
         );
     }
 
@@ -141,7 +135,7 @@ final class Domain extends AbstractRule
         return new AllOf(
             new Not(new StartsWith('-')),
             new NoWhitespace(),
-            new Length(2)
+            new Length(2),
         );
     }
 
@@ -152,11 +146,9 @@ final class Domain extends AbstractRule
             new Not(new StartsWith('-')),
             new AnyOf(
                 new Not(new Contains('--')),
-                new Callback(static function ($str) {
-                    return mb_substr_count($str, '--') == 1;
-                })
+                new Callback(static fn ($str) => mb_substr_count($str, '--') === 1),
             ),
-            new Not(new EndsWith('-'))
+            new Not(new EndsWith('-')),
         );
     }
 

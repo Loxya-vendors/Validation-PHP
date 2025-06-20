@@ -20,19 +20,13 @@ use Respect\Validation\Validatable;
  */
 final class When extends AbstractRule
 {
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $when;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $then;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $else;
 
     public function __construct(Validatable $when, Validatable $then, ?Validatable $else = null)

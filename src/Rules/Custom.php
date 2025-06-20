@@ -37,7 +37,7 @@ final class Custom extends AbstractRule
             $this->setTemplate(
                 $result instanceof NestedValidationException
                     ? $result->getFullMessage()
-                    : $result->getMessage()
+                    : $result->getMessage(),
             );
             throw $result;
         }

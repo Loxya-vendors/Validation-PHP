@@ -18,9 +18,6 @@ use function ctype_digit;
  */
 final class Digit extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_digit($input);

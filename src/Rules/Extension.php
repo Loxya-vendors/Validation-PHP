@@ -20,9 +20,7 @@ use const PATHINFO_EXTENSION;
  */
 final class Extension extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $extension;
 
     /**

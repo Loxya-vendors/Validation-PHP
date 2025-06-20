@@ -52,7 +52,7 @@ final class Cnpj extends AbstractRule
             $n += $digits[$i] * $bases[$i + 1];
         }
 
-        if ($digits[12] != (($n %= 11) < 2 ? 0 : 11 - $n)) {
+        if ($digits[12] !== (($n %= 11) < 2 ? 0 : 11 - $n)) {
             return false;
         }
 
@@ -63,7 +63,7 @@ final class Cnpj extends AbstractRule
 
         $check = ($n %= 11) < 2 ? 0 : 11 - $n;
 
-        return $digits[13] == $check;
+        return $digits[13] === $check;
     }
 
     /**
@@ -74,8 +74,8 @@ final class Cnpj extends AbstractRule
         return array_map(
             'intval',
             str_split(
-                (string) preg_replace('/\D/', '', $input)
-            )
+                (string) preg_replace('/\D/', '', $input),
+            ),
         );
     }
 }

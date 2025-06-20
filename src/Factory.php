@@ -30,24 +30,16 @@ use function ucfirst;
  */
 final class Factory
 {
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $rulesNamespaces = ['Respect\\Validation\\Rules'];
 
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $exceptionsNamespaces = ['Respect\\Validation\\Exceptions'];
 
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $translator = 'strval';
 
-    /**
-     * @var ParameterStringifier
-     */
+    /** @var ParameterStringifier */
     private $parameterStringifier;
 
     /**
@@ -135,7 +127,7 @@ final class Factory
                     ->newInstanceArgs($arguments);
 
                 return $rule;
-            } catch (ReflectionException $exception) {
+            } catch (ReflectionException) {
                 continue;
             }
         }
@@ -167,9 +159,9 @@ final class Factory
                     $exceptionName,
                     $input,
                     $params,
-                    $formatter
+                    $formatter,
                 );
-            } catch (ReflectionException $exception) {
+            } catch (ReflectionException) {
                 continue;
             }
         }
@@ -225,7 +217,7 @@ final class Factory
         string $exceptionName,
         $input,
         array $params,
-        Formatter $formatter
+        Formatter $formatter,
     ): ValidationException {
         /** @var ValidationException $exception */
         $exception = $this

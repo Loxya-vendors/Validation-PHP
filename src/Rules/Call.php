@@ -23,14 +23,10 @@ use function set_error_handler;
  */
 final class Call extends AbstractRule
 {
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $callable;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $rule;
 
     /**
@@ -53,7 +49,7 @@ final class Call extends AbstractRule
             $this->rule->assert(call_user_func($this->callable, $input));
         } catch (ValidationException $exception) {
             throw $exception;
-        } catch (Throwable $throwable) {
+        } catch (Throwable) {
             throw $this->reportError($input);
         } finally {
             restore_error_handler();
@@ -71,7 +67,7 @@ final class Call extends AbstractRule
             $this->rule->check(call_user_func($this->callable, $input));
         } catch (ValidationException $exception) {
             throw $exception;
-        } catch (Throwable $throwable) {
+        } catch (Throwable) {
             throw $this->reportError($input);
         } finally {
             restore_error_handler();
@@ -85,7 +81,7 @@ final class Call extends AbstractRule
     {
         try {
             $this->check($input);
-        } catch (ValidationException $exception) {
+        } catch (ValidationException) {
             return false;
         }
 

@@ -21,9 +21,6 @@ use function ctype_alnum;
  */
 final class Alnum extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_alnum($input);

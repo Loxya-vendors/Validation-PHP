@@ -18,9 +18,7 @@ abstract class AbstractComparison extends AbstractRule
 {
     use CanCompareValues;
 
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $compareTo;
 
     /**

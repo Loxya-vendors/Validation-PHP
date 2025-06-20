@@ -19,9 +19,6 @@ final class PhoneException extends ValidationException
     public const FOR_COUNTRY = 'for_country';
     public const INTERNATIONAL = 'international';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::INTERNATIONAL => '{{name}} must be a valid telephone number',
@@ -33,9 +30,6 @@ final class PhoneException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         $countryCode = $this->getParam('countryCode');

@@ -23,14 +23,10 @@ use function mb_strpos;
  */
 final class Contains extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $containsValue;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $identical;
 
     /**

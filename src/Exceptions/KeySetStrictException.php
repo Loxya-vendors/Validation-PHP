@@ -17,9 +17,6 @@ final class KeySetStrictException extends GroupedValidationException implements 
     public const STRUCTURE = 'structure';
     public const STRUCTURE_EXTRA = 'structure_extra';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NONE => 'All of the required rules must pass for {{name}}',
@@ -29,9 +26,6 @@ final class KeySetStrictException extends GroupedValidationException implements 
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if (count($this->getParam('extraKeys'))) {

@@ -20,9 +20,7 @@ use function is_scalar;
  */
 final class LeapDate extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $format;
 
     /**

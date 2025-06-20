@@ -20,9 +20,7 @@ use function is_numeric;
  */
 final class Factor extends AbstractRule
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     private $dividend;
 
     /**
@@ -45,7 +43,7 @@ final class Factor extends AbstractRule
         }
 
         // Factors must be integers that are not zero.
-        if (!is_numeric($input) || (int) $input != $input || $input == 0) {
+        if (!is_numeric($input) || (int) $input !== $input || $input === 0) {
             return false;
         }
 

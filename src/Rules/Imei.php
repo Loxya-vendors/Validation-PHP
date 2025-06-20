@@ -35,7 +35,7 @@ final class Imei extends AbstractRule
         }
 
         $numbers = (string) preg_replace('/\D/', '', (string) $input);
-        if (mb_strlen($numbers) != self::IMEI_SIZE) {
+        if (mb_strlen($numbers) !== self::IMEI_SIZE) {
             return false;
         }
 

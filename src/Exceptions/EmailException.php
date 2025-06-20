@@ -18,9 +18,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class EmailException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be valid email',

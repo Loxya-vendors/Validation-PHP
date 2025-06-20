@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class FibonacciException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid Fibonacci number',

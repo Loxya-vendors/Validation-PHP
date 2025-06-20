@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class NoneOfException extends NestedValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => 'None of these rules must pass for {{name}}',

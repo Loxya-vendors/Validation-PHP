@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class PunctException extends FilteredValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must contain only punctuation characters',

@@ -18,9 +18,7 @@ use function str_split;
  */
 abstract class AbstractFilterRule extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $additionalChars;
 
     abstract protected function validateFilteredInput(string $input): bool;

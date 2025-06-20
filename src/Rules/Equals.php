@@ -16,9 +16,7 @@ namespace Respect\Validation\Rules;
  */
 final class Equals extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $compareTo;
 
     /**
@@ -36,6 +34,6 @@ final class Equals extends AbstractRule
      */
     public function validate($input): bool
     {
-        return $input == $this->compareTo;
+        return $input === $this->compareTo;
     }
 }

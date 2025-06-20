@@ -27,7 +27,7 @@ final class ContainsAny extends AbstractEnvelope
     {
         parent::__construct(
             new AnyOf(...$this->getRules($needles, $identical)),
-            ['needles' => $needles]
+            ['needles' => $needles],
         );
     }
 
@@ -39,10 +39,8 @@ final class ContainsAny extends AbstractEnvelope
     private function getRules(array $needles, bool $identical): array
     {
         return array_map(
-            static function ($needle) use ($identical): Contains {
-                return new Contains($needle, $identical);
-            },
-            $needles
+            static fn ($needle): Contains => new Contains($needle, $identical),
+            $needles,
         );
     }
 }

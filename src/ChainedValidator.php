@@ -31,7 +31,7 @@ interface ChainedValidator extends Validatable
     public function attribute(
         string $reference,
         ?Validatable $validator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public function base(int $base, ?string $chars = null): ChainedValidator;
@@ -192,13 +192,13 @@ interface ChainedValidator extends Validatable
     public function key(
         string $reference,
         ?Validatable $referenceValidator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public function keyNested(
         string $reference,
         ?Validatable $referenceValidator = null,
-        bool $mandatory = true
+        bool $mandatory = true,
     ): ChainedValidator;
 
     public function keySet(Key ...$rule): ChainedValidator;

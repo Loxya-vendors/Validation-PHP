@@ -21,14 +21,10 @@ use const FILEINFO_MIME_TYPE;
  */
 final class Mimetype extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $mimetype;
 
-    /**
-     * @var finfo
-     */
+    /** @var finfo */
     private $fileInfo;
 
     /**

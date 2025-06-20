@@ -17,9 +17,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class TldException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid top-level domain name',

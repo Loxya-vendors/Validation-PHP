@@ -23,14 +23,10 @@ use function sprintf;
  */
 final class Base extends AbstractRule
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $base;
 
     /**

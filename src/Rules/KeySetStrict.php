@@ -24,14 +24,10 @@ use function is_array;
  */
 final class KeySetStrict extends AbstractWrapper implements NonNegatable
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $extraKeys = [];
 
-    /**
-     * @var Key[]
-     */
+    /** @var Key[] */
     private $keyRules;
 
     /**
@@ -120,6 +116,6 @@ final class KeySetStrict extends AbstractWrapper implements NonNegatable
             $this->extraKeys[] = $extraKey;
         }
 
-        return count($input) == 0;
+        return count($input) === 0;
     }
 }

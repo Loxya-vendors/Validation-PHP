@@ -13,9 +13,7 @@ use function explode;
 
 final class PublicDomainSuffix extends AbstractSearcher
 {
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $domainInfo;
 
     /**

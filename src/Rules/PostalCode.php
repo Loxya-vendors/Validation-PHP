@@ -211,9 +211,9 @@ final class PostalCode extends AbstractEnvelope
 
         parent::__construct(
             new Regex(
-                self::POSTAL_CODES_EXTRA[$countryCode][$formatted ? 0 : 1] ?? self::POSTAL_CODES[$countryCode][$formatted ? 0 : 1] ?? self::DEFAULT_PATTERN
+                self::POSTAL_CODES_EXTRA[$countryCode][$formatted ? 0 : 1] ?? self::POSTAL_CODES[$countryCode][$formatted ? 0 : 1] ?? self::DEFAULT_PATTERN,
             ),
-            ['countryCode' => $countryCode]
+            ['countryCode' => $countryCode],
         );
     }
 }

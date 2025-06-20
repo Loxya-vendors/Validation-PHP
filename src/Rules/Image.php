@@ -23,9 +23,7 @@ use const FILEINFO_MIME_TYPE;
  */
 final class Image extends AbstractRule
 {
-    /**
-     * @var finfo
-     */
+    /** @var finfo */
     private $fileInfo;
 
     /**

@@ -18,9 +18,6 @@ final class SortedException extends ValidationException
     public const ASCENDING = 'ascending';
     public const DESCENDING = 'descending';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::ASCENDING => '{{name}} must be sorted in ascending order',
@@ -32,9 +29,6 @@ final class SortedException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         return $this->getParam('direction') === Sorted::ASCENDING ? self::ASCENDING : self::DESCENDING;

@@ -23,19 +23,13 @@ abstract class AbstractAge extends AbstractRule
 {
     use CanValidateDateTime;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $age;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $format;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $baseDate;
 
     /**
@@ -52,7 +46,7 @@ abstract class AbstractAge extends AbstractRule
     {
         $this->age = $age;
         $this->format = $format;
-        $this->baseDate = (int) date('Ymd') - $this->age * 10000;
+        $this->baseDate = (int) date('Ymd') - $this->age * 10_000;
     }
 
     /**
@@ -89,7 +83,7 @@ abstract class AbstractAge extends AbstractRule
 
         return $this->compare(
             $this->baseDate,
-            (int) vsprintf('%d%02d%02d', date_parse_from_format($format, $dateTime))
+            (int) vsprintf('%d%02d%02d', date_parse_from_format($format, $dateTime)),
         );
     }
 }

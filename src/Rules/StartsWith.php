@@ -22,14 +22,10 @@ use function reset;
  */
 final class StartsWith extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $startValue;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $identical;
 
     /**
@@ -59,7 +55,7 @@ final class StartsWith extends AbstractRule
     protected function validateEquals($input): bool
     {
         if (is_array($input)) {
-            return reset($input) == $this->startValue;
+            return reset($input) === $this->startValue;
         }
 
         if (is_string($input) && is_string($this->startValue)) {

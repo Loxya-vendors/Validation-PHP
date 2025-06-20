@@ -16,9 +16,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class UploadedException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be an uploaded file',

@@ -24,9 +24,7 @@ use const FILTER_VALIDATE_EMAIL;
  */
 final class Email extends AbstractRule
 {
-    /**
-     * @var EmailValidator|null
-     */
+    /** @var EmailValidator|null */
     private $validator;
 
     /**

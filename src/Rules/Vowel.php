@@ -17,9 +17,6 @@ use function preg_match;
  */
 final class Vowel extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return preg_match('/^[aeiouAEIOU]+$/', $input) > 0;

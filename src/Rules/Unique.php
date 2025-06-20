@@ -29,6 +29,6 @@ final class Unique extends AbstractRule
             return false;
         }
 
-        return $input == array_unique($input, SORT_REGULAR);
+        return $input === array_unique($input, SORT_REGULAR);
     }
 }

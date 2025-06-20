@@ -24,9 +24,7 @@ use function sprintf;
  */
 final class Phone extends AbstractRule
 {
-    /**
-     * @var ?string
-     */
+    /** @var ?string */
     private $countryCode;
 
     /**
@@ -59,16 +57,16 @@ final class Phone extends AbstractRule
         if (is_null($this->countryCode)) {
             $pattern = vsprintf(
                 '/^\+?(%1$s)? ?(?(?=\()(\(%2$s\) ?%3$s)|([. -]?(%2$s[. -]*)?%3$s))$/',
-                ['\d{0,3}', '\d{1,3}', '((\d{3,5})[. -]?(\d{4})|(\d{2}[. -]?){4})']
+                ['\d{0,3}', '\d{1,3}', '((\d{3,5})[. -]?(\d{4})|(\d{2}[. -]?){4})'],
             );
             return preg_match($pattern, (string) $input) > 0;
         }
 
         try {
             return PhoneNumberUtil::getInstance()->isValidNumber(
-                PhoneNumberUtil::getInstance()->parse((string) $input, $this->countryCode)
+                PhoneNumberUtil::getInstance()->parse((string) $input, $this->countryCode),
             );
-        } catch (NumberParseException $e) {
+        } catch (NumberParseException) {
             return false;
         }
     }

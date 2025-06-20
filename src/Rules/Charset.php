@@ -22,9 +22,7 @@ use function mb_list_encodings;
  */
 final class Charset extends AbstractRule
 {
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $charset;
 
     /**

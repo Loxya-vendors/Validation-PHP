@@ -28,7 +28,7 @@ final class NotBlank extends AbstractRule
     public function validate($input): bool
     {
         if (is_numeric($input)) {
-            return $input != 0;
+            return $input !== 0;
         }
 
         if (is_string($input)) {

@@ -35,9 +35,7 @@ use const PHP_EOL;
  */
 class NestedValidationException extends ValidationException implements IteratorAggregate
 {
-    /**
-     * @var ValidationException[]
-     */
+    /** @var ValidationException[] */
     private $exceptions = [];
 
     /**
@@ -146,7 +144,7 @@ class NestedValidationException extends ValidationException implements IteratorA
             $messages[] = sprintf(
                 '%s- %s',
                 str_repeat(' ', (int) ($exceptions[$exception] - $leveler) * 2),
-                $exception->getMessage()
+                $exception->getMessage(),
             );
         }
 
@@ -160,7 +158,7 @@ class NestedValidationException extends ValidationException implements IteratorA
     {
         return new RecursiveIteratorIterator(
             new RecursiveExceptionIterator($this),
-            RecursiveIteratorIterator::SELF_FIRST
+            RecursiveIteratorIterator::SELF_FIRST,
         );
     }
 

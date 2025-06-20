@@ -13,14 +13,10 @@ use function Respect\Stringifier\stringify;
 
 final class Formatter
 {
-    /**
-     * @var callable
-     */
+    /** @var callable */
     private $translator;
 
-    /**
-     * @var ParameterStringifier
-     */
+    /** @var ParameterStringifier */
     private $parameterStringifier;
 
     public function __construct(callable $translator, ParameterStringifier $parameterStringifier)
@@ -35,7 +31,7 @@ final class Formatter
      */
     public function format(string $template, $input, array $parameters): string
     {
-        $parameters['name'] = $parameters['name'] ?? stringify($input);
+        $parameters['name'] ??= stringify($input);
 
         return preg_replace_callback(
             '/{{(\w+)}}/',
@@ -49,7 +45,7 @@ final class Formatter
                     ? $this->parameterStringifier->stringify($match[1], $value)
                     : (string) $value;
             },
-            call_user_func($this->translator, $template)
+            call_user_func($this->translator, $template),
         );
     }
 }

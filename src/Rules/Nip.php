@@ -45,8 +45,8 @@ final class Nip extends AbstractRule
             $calculateControlNumber += $digits[$i] * $weights[$i];
         }
 
-        $calculateControlNumber = $calculateControlNumber % 11;
+        $calculateControlNumber %= 11;
 
-        return $targetControlNumber == $calculateControlNumber;
+        return $targetControlNumber === $calculateControlNumber;
     }
 }

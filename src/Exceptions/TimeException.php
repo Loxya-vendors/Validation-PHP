@@ -12,9 +12,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class TimeException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid time in the format {{sample}}',

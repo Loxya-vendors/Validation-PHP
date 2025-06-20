@@ -35,7 +35,7 @@ final class KeyNested extends AbstractRelated
     {
         try {
             $this->getReferenceValue($input);
-        } catch (ComponentException $cex) {
+        } catch (ComponentException) {
             return false;
         }
 

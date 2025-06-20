@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class DateException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid date in the format {{sample}}',

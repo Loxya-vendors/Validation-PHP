@@ -14,9 +14,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class EachException extends NestedValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => 'Each item in {{name}} must be valid',
@@ -29,7 +26,7 @@ final class EachException extends NestedValidationException
     public function getMessages(): array
     {
         return array_map(
-            fn ($exception) => $exception->getMessage(),
+            static fn ($exception) => $exception->getMessage(),
             $this->getChildren(),
         );
     }

@@ -24,9 +24,7 @@ final class Each extends AbstractRule
 {
     use CanValidateIterable;
 
-    /**
-     * @var Validatable
-     */
+    /** @var Validatable */
     private $rule;
 
     /**
@@ -85,7 +83,7 @@ final class Each extends AbstractRule
     {
         try {
             $this->check($input);
-        } catch (ValidationException $exception) {
+        } catch (ValidationException) {
             return false;
         }
 

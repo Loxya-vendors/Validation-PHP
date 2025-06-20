@@ -19,19 +19,13 @@ use function in_array;
  */
 final class KeyValue extends AbstractRule
 {
-    /**
-     * @var int|string
-     */
+    /** @var int|string */
     private $comparedKey;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $ruleName;
 
-    /**
-     * @var int|string
-     */
+    /** @var int|string */
     private $baseKey;
 
     /**
@@ -80,7 +74,7 @@ final class KeyValue extends AbstractRule
     {
         try {
             $rule = $this->getRule($input);
-        } catch (ValidationException $e) {
+        } catch (ValidationException) {
             return false;
         }
 
@@ -115,7 +109,7 @@ final class KeyValue extends AbstractRule
         try {
             $rule = Factory::getDefaultInstance()->rule($this->ruleName, [$input[$this->baseKey]]);
             $rule->setName((string) $this->comparedKey);
-        } catch (ComponentException $exception) {
+        } catch (ComponentException) {
             throw parent::reportError($input, ['component' => true]);
         }
 

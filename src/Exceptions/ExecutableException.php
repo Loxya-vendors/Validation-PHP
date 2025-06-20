@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class ExecutableException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be an executable file',

@@ -31,19 +31,13 @@ use function sprintf;
  */
 final class Length extends AbstractRule
 {
-    /**
-     * @var int|null
-     */
+    /** @var int|null */
     private $minValue;
 
-    /**
-     * @var int|null
-     */
+    /** @var int|null */
     private $maxValue;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $inclusive;
 
     /**

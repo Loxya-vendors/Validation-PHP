@@ -15,9 +15,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class TrueValException extends ValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} is not considered as "True"',

@@ -17,9 +17,6 @@ namespace Respect\Validation\Rules;
  */
 final class MinAge extends AbstractAge
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function compare(int $baseDate, int $givenDate): bool
     {
         return $baseDate >= $givenDate;

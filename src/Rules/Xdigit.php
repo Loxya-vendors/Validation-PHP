@@ -15,9 +15,6 @@ use function ctype_xdigit;
  */
 final class Xdigit extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_xdigit($input);

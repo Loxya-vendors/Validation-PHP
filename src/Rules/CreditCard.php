@@ -55,9 +55,7 @@ final class CreditCard extends AbstractRule
         self::RUPAY => '/^6(?!011)(?:0[0-9]{14}|52[12][0-9]{12})$/',
     ];
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $brand;
 
     /**
@@ -72,8 +70,8 @@ final class CreditCard extends AbstractRule
                 sprintf(
                     '"%s" is not a valid credit card brand (Available: %s)',
                     $brand,
-                    implode(', ', array_keys(self::BRAND_REGEX_LIST))
-                )
+                    implode(', ', array_keys(self::BRAND_REGEX_LIST)),
+                ),
             );
         }
 

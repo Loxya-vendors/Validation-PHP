@@ -18,9 +18,6 @@ final class CreditCardException extends ValidationException
 {
     public const BRANDED = 'branded';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid Credit Card number',
@@ -32,9 +29,6 @@ final class CreditCardException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if ($this->getParam('brand') === CreditCard::ANY) {

@@ -19,9 +19,6 @@ use function ctype_graph;
  */
 final class Graph extends AbstractFilterRule
 {
-    /**
-     * {@inheritDoc}
-     */
     protected function validateFilteredInput(string $input): bool
     {
         return ctype_graph($input);

@@ -15,9 +15,6 @@ final class DateTimeException extends ValidationException
 {
     public const FORMAT = 'format';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must be a valid date/time',
@@ -29,9 +26,6 @@ final class DateTimeException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         return $this->getParam('format') ? self::FORMAT : self::STANDARD;

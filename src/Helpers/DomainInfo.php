@@ -12,14 +12,10 @@ use function mb_strtoupper;
 
 final class DomainInfo
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $data;
 
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private static $runtimeCache = [];
 
     public function __construct(string $tld)

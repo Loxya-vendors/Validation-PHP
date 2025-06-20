@@ -337,9 +337,7 @@ final class CountryCode extends AbstractSearcher
     // end of auto-generated code
     ];
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $set;
 
     /**
@@ -354,8 +352,8 @@ final class CountryCode extends AbstractSearcher
                 sprintf(
                     '"%s" is not a valid set for ISO 3166-1 (Available: %s)',
                     $set,
-                    implode(', ', array_keys(self::SET_INDEXES))
-                )
+                    implode(', ', array_keys(self::SET_INDEXES)),
+                ),
             );
         }
 

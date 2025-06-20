@@ -15,9 +15,6 @@ final class NotOptionalException extends ValidationException
 {
     public const NAMED = 'named';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => 'The value must not be optional',
@@ -29,9 +26,6 @@ final class NotOptionalException extends ValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         if ($this->getParam('input') || $this->getParam('name')) {

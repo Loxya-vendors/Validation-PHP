@@ -18,9 +18,6 @@ class GroupedValidationException extends NestedValidationException
     public const NONE = 'none';
     public const SOME = 'some';
 
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::NONE => 'All of the required rules must pass for {{name}}',
@@ -32,9 +29,6 @@ class GroupedValidationException extends NestedValidationException
         ],
     ];
 
-    /**
-     * {@inheritDoc}
-     */
     protected function chooseTemplate(): string
     {
         $numRules = $this->getParam('passed');

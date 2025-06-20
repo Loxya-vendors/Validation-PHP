@@ -13,9 +13,6 @@ namespace Respect\Validation\Exceptions;
  */
 final class DigitException extends FilteredValidationException
 {
-    /**
-     * {@inheritDoc}
-     */
     protected $defaultTemplates = [
         self::MODE_DEFAULT => [
             self::STANDARD => '{{name}} must contain only digits (0-9)',

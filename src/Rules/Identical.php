@@ -14,9 +14,7 @@ namespace Respect\Validation\Rules;
  */
 final class Identical extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $compareTo;
 
     /**

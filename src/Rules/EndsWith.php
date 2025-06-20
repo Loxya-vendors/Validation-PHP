@@ -23,14 +23,10 @@ use function mb_strrpos;
  */
 final class EndsWith extends AbstractRule
 {
-    /**
-     * @var mixed
-     */
+    /** @var mixed */
     private $endValue;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $identical;
 
     /**
@@ -60,7 +56,7 @@ final class EndsWith extends AbstractRule
     private function validateEquals($input): bool
     {
         if (is_array($input)) {
-            return end($input) == $this->endValue;
+            return end($input) === $this->endValue;
         }
 
         return mb_strripos($input, $this->endValue) === mb_strlen($input) - mb_strlen($this->endValue);
