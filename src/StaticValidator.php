@@ -44,8 +44,6 @@ interface StaticValidator
      */
     public static function between($minimum, $maximum): ChainedValidator;
 
-    public static function bic(string $countryCode): ChainedValidator;
-
     public static function boolType(): ChainedValidator;
 
     public static function boolVal(): ChainedValidator;
@@ -81,8 +79,6 @@ interface StaticValidator
     public static function countable(): ChainedValidator;
 
     public static function countryCode(?string $set = null): ChainedValidator;
-
-    public static function custom(callable $callback, ...$arguments): ChainedValidator;
 
     public static function currencyCode(): ChainedValidator;
 
@@ -203,8 +199,6 @@ interface StaticValidator
 
     public static function keySet(Key ...$rule): ChainedValidator;
 
-    public static function keySetStrict(Key ...$rule): ChainedValidator;
-
     public static function keyValue(string $comparedKey, string $ruleName, string $baseKey): ChainedValidator;
 
     public static function languageCode(?string $set = null): ChainedValidator;
@@ -296,6 +290,8 @@ interface StaticValidator
 
     public static function polishIdCard(): ChainedValidator;
 
+    public static function portugueseNif(): ChainedValidator;
+
     public static function positive(): ChainedValidator;
 
     public static function postalCode(string $countryCode): ChainedValidator;
@@ -303,6 +299,8 @@ interface StaticValidator
     public static function primeNumber(): ChainedValidator;
 
     public static function printable(string ...$additionalChars): ChainedValidator;
+
+    public static function publicDomainSuffix(): ChainedValidator;
 
     public static function punct(string ...$additionalChars): ChainedValidator;
 

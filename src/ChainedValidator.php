@@ -12,6 +12,19 @@ use Respect\Validation\Rules\Key;
 
 interface ChainedValidator extends Validatable
 {
+    /**
+     * Returns all the rules in the stack.
+     *
+     * @return Validatable[]
+     */
+    public function getRules(): array;
+
+    // ------------------------------------------------------
+    // -
+    // -    Rules
+    // -
+    // ------------------------------------------------------
+
     public function allOf(Validatable ...$rule): ChainedValidator;
 
     public function alnum(string ...$additionalChars): ChainedValidator;
@@ -44,8 +57,6 @@ interface ChainedValidator extends Validatable
      */
     public function between($minimum, $maximum): ChainedValidator;
 
-    public function bic(string $countryCode): ChainedValidator;
-
     public function boolType(): ChainedValidator;
 
     public function boolVal(): ChainedValidator;
@@ -77,8 +88,6 @@ interface ChainedValidator extends Validatable
      * @param mixed[] $needles
      */
     public function containsAny(array $needles, bool $strictCompareArray = false): ChainedValidator;
-
-    public function custom(callable $callback, ...$arguments): ChainedValidator;
 
     public function countable(): ChainedValidator;
 
@@ -203,8 +212,6 @@ interface ChainedValidator extends Validatable
 
     public function keySet(Key ...$rule): ChainedValidator;
 
-    public function keySetStrict(Key ...$rule): ChainedValidator;
-
     public function keyValue(string $comparedKey, string $ruleName, string $baseKey): ChainedValidator;
 
     public function languageCode(?string $set = null): ChainedValidator;
@@ -296,6 +303,8 @@ interface ChainedValidator extends Validatable
 
     public function polishIdCard(): ChainedValidator;
 
+    public function portugueseNif(): ChainedValidator;
+
     public function positive(): ChainedValidator;
 
     public function postalCode(string $countryCode): ChainedValidator;
@@ -303,6 +312,8 @@ interface ChainedValidator extends Validatable
     public function primeNumber(): ChainedValidator;
 
     public function printable(string ...$additionalChars): ChainedValidator;
+
+    public function publicDomainSuffix(): ChainedValidator;
 
     public function punct(string ...$additionalChars): ChainedValidator;
 
