@@ -65,7 +65,7 @@ final class Phone extends AbstractRule
             $phoneNumberUtil = PhoneNumberUtil::getInstance();
             $phoneNumberObject = $phoneNumberUtil->parse($input, $countryCode);
 
-            return $phoneNumberUtil->getRegionCodeForNumber($phoneNumberObject) === $countryCode;
+            return $phoneNumberUtil->isValidNumberForRegion($phoneNumberObject, $countryCode);
         } catch (NumberParseException) {
         }
 
